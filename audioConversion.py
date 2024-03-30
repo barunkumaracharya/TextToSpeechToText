@@ -5,6 +5,11 @@ from openvoice import se_extractor
 from openvoice.api import BaseSpeakerTTS, ToneColorConverter
 
 ## Convert from audio to text
+## Sample2.m4a is the input audio  (a voice recording from the user)
+##The code first uses whisper to transcribe voice to text, prints it "print(result["text"])"
+## Then, the code uses the same transcribed text and translates it back to audio
+## It is saved in path which is mentioned by "output_path"
+## Please use the readme file to download all dependencies.
 model = whisper.load_model("base")
 result = model.transcribe('Sample2.m4a')
 print(result["text"])
